@@ -1,4 +1,4 @@
-package com.demo.core.net;
+package com.demo.core.net.server;
 
 /**
  * 服务器接口

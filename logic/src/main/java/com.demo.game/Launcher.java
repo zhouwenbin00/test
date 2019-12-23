@@ -1,6 +1,6 @@
 package com.demo.game;
 
-import com.demo.core.net.HttpServer;
+import com.demo.core.net.server.HttpServer;
 import com.demo.core.utils.EnumUtils;
 import com.demo.game.logic.cmd.CmdManager;
 import com.demo.game.logic.cmd.CmdType;

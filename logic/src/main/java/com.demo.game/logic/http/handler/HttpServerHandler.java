@@ -1,7 +1,7 @@
 package com.demo.game.logic.http.handler;
 
 import com.alibaba.fastjson.JSON;
-import com.demo.core.net.AbstractHttpServerHandler;
+import com.demo.core.net.handler.AbstractHttpServerHandler;
 import com.demo.game.StringConstant;
 import com.demo.game.logic.http.AbstractController;
 import com.demo.game.logic.http.HttpControllerManager;

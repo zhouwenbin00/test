@@ -1,4 +1,4 @@
-package com.demo.core.net;
+package com.demo.core.net.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

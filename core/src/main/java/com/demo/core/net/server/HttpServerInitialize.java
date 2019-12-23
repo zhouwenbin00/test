@@ -1,4 +1,4 @@
-package com.demo.core.net;
+package com.demo.core.net.server;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;

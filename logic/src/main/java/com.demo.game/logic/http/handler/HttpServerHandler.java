@@ -67,12 +67,8 @@ public class HttpServerHandler extends AbstractHttpServerHandler {
      */
     private Request createRequest(HttpRequest request) {
         QueryStringDecoder queryStringDecoder = new QueryStringDecoder(request.uri());
-        String url = request.uri();
-        int index = url.indexOf(StringConstant.QUESTION_MARK);
-        if (index > 0) {
-            url = url.substring(0, index);
-        }
-        return new Request(url, request.uri(), queryStringDecoder.parameters());
+        return new Request(
+                queryStringDecoder.path(), request.uri(), queryStringDecoder.parameters());
     }
 
     /**

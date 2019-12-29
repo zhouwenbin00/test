@@ -5,6 +5,7 @@ import com.demo.core.net.handler.AbstractHttpServerHandler;
 import com.demo.game.StringConstant;
 import com.demo.game.logic.http.AbstractController;
 import com.demo.game.logic.http.HttpControllerManager;
+import com.demo.game.logic.http.HttpType;
 import com.demo.game.logic.http.request.Request;
 import com.demo.game.logic.http.response.Response;
 import com.google.inject.Inject;
@@ -48,11 +49,13 @@ public class HttpServerHandler extends AbstractHttpServerHandler {
                 return;
             }
             Request req = createRequest(request);
-            AbstractController script = httpControllerManager.getScript(req.getUrl());
-            if (script == null) {
+            HttpType httpType = HttpType.create(req.getUrl());
+
+            if (httpType == null) {
                 log.warn("???没有对应脚本的请求:{}", req.getUrl());
                 return;
             }
+            AbstractController script = httpControllerManager.getScript(httpType);
             Response res = script.exec(req);
 
             ctx.writeAndFlush(createResponse(res));

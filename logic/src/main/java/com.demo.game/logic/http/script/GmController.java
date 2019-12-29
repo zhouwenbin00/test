@@ -2,6 +2,7 @@ package com.demo.game.logic.http.script;
 
 import com.demo.game.logic.http.AbstractController;
 import com.demo.game.logic.http.HttpControllerManager;
+import com.demo.game.logic.http.HttpType;
 import com.demo.game.logic.http.request.Request;
 import com.demo.game.logic.http.response.Response;
 import com.demo.game.logic.http.response.ResponseResult;
@@ -23,9 +24,10 @@ public class GmController extends AbstractController {
     }
 
     @Override
-    public String url() {
-        return "/commands";
+    public HttpType type() {
+        return HttpType.GM;
     }
+
 
     @Override
     public Response exec(Request request) {

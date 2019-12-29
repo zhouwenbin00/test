@@ -26,6 +26,10 @@ public class ResponseResult extends Response {
         return new ResponseResult(HttpCode.OK);
     }
 
+    public static Response fail(String message) {
+        return new Response(302, message);
+    }
+
     /**
      * 设置数据
      *

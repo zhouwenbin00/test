@@ -21,7 +21,7 @@ public abstract class AbstractController {
      *
      * @return 请求路径
      */
-    public abstract String url();
+    public abstract HttpType type();
 
     /**
      * 处理请求

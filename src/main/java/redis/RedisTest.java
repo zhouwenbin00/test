@@ -1,5 +1,7 @@
 package redis;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.SortingParams;
@@ -84,7 +86,7 @@ public class RedisTest {
         Long zcard = jedis.zcard("server-activity");
         Set<String> zrange = jedis.zrange("server-activity", 0, zcard);
         System.out.println(zrange);
-        Set<String> zrevrange = jedis.zrevrange("server-activity", 0, zcard);
+        Set<String> zrevrange = jedis.zrevrange("server-activity", 0, 1);
         System.out.println(zrevrange);
     }
 
@@ -123,4 +125,43 @@ public class RedisTest {
         System.out.println(strings);
 
     }
+
+    @Test
+    public void name() {
+        Jedis jedis = JedisUtils.getInstance();
+        jedis.del("key");
+        System.out.println(jedis.llen("key"));
+        List<String> key = jedis.lrange("key", 0, -1);
+        System.out.println(key);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", "zhangsan");
+        jedis.lpush("key", jsonObject.toJSONString());
+        jedis.lpush("key", jsonObject.toJSONString());
+        jedis.lpush("key", jsonObject.toJSONString());
+        jedis.lpush("key", jsonObject.toJSONString());
+        jedis.lpush("key", jsonObject.toJSONString()+"1");
+        System.out.println(jedis.llen("key"));
+        List<String> key1 = jedis.lrange("key", 0, -1);
+
+        System.out.println(JSON.toJSONString(key1));
+        System.out.println(key1);
+        List<String> key2 = jedis.lrange("key", -50, -1);
+        System.out.println(key2);
+//
+//        jedis.lrem("key", 0, jsonObject.toJSONString());
+        System.out.println(jedis.llen("key"));
+    }
+
+    @Test
+    public void name1() {
+        String key ="1XXX";
+        int num=0;
+        for (char c : key.toCharArray()) {
+            if (String.valueOf(c).matches("^[+]{0,1}(\\d+)$")){
+                num++;
+            }
+        }
+        System.out.println(num);
+    }
+
 }

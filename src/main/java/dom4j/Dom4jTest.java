@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 /** @author zwb */
-public class MainTest {
+public class Dom4jTest {
 
     private static final String ProtocolsSrcDir = "E:\\project\\trunk_XLZ_skill\\Protocols";
     private static final String genDir = "E:\\project\\trunk_XLZ_skill\\protocolsa\\protocols";
@@ -54,11 +54,12 @@ public class MainTest {
         Iterator it = rootElement.elementIterator();
         while (it.hasNext()) {
             Element next = (Element) it.next();
-            if (next.getName().equalsIgnoreCase("struct")) {
-                definitionFile.getStructs().add(createStruct(next));
-            } else if (next.getName().equalsIgnoreCase("message")) {
-                definitionFile.getMessages().add(createMessage(next));
-            }
+//            if (next.getName().equalsIgnoreCase("struct")) {
+//                definitionFile.getMessages().add(createStruct(next));
+//            } else if (next.getName().equalsIgnoreCase("message")) {
+//                definitionFile.getMessages().add(createMessage(next));
+//            }
+            definitionFile.getMessages().add(createMessage(next));
         }
         definitionFileMap.put(definitionFile.getName(), definitionFile);
     }

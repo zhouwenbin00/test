@@ -1,11 +1,8 @@
 package dom4j;
 
-import lombok.Data;
-
 /**
  * @author zwb
  */
-@Data
 public class NameAndDesc {
     private String name;
     private String desc;

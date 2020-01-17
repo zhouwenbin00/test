@@ -12,16 +12,16 @@ import java.util.List;
 @Data
 @ToString
 public class DefinitionFile extends NameAndDesc{
-    private List<DefinitionStruct> structs = new ArrayList<>();
+//    private List<DefinitionStruct> structs = new ArrayList<>();
     private List<DefinitionMessage> messages = new ArrayList<>();
 
-    public List<DefinitionStruct> getStructs() {
-        return structs;
-    }
+//    public List<DefinitionStruct> getStructs() {
+//        return structs;
+//    }
 
-    public void setStructs(List<DefinitionStruct> structs) {
-        this.structs = structs;
-    }
+//    public void setStructs(List<DefinitionStruct> structs) {
+//        this.structs = structs;
+//    }
 
     public List<DefinitionMessage> getMessages() {
         return messages;

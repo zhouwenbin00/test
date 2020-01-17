@@ -11,5 +11,6 @@ public enum CmdType {
      * 停止
      */
     STOP,
+    JAR,
     ;
 }

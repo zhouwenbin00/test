@@ -3,6 +3,7 @@ package com.demo.game.guice;
 import com.demo.game.Launcher;
 import com.demo.game.logic.activity.ActivityManager;
 import com.demo.game.logic.activity.script.TestActivityScript;
+import com.demo.game.logic.cmd.script.JarCmdScript;
 import com.demo.game.logic.cmd.script.StopCmdScript;
 import com.demo.game.logic.http.script.ActivityController;
 import com.demo.game.logic.http.script.GmController;
@@ -26,6 +27,7 @@ public class ServerModule extends AbstractModule {
         bindSingleton(Launcher.class);
         bindSingleton(TestActivityScript.class);
         bindSingleton(ActivityController.class);
+        bindSingleton(JarCmdScript.class);
     }
 
     /**

@@ -1,6 +1,6 @@
-package Message;
+package Message.${name};
 
-option java_package = "message";
+option java_package = "msg";
 option java_outer_classname = "${name}";
 
 // ${desc}

@@ -2,6 +2,7 @@ package com.test.demo;
 
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
+import org.springframework.beans.BeanUtils;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -118,5 +119,19 @@ public class MyTest {
     public void method2(Integer a){
         a=2;
     }
+    @Test
+    public void test(){
+        int serverId = 9060;
+        long cur = System.currentTimeMillis()/1000;
+        int seed =1;
+        for (int i = 9103; i <9105; i++) {
+            long l = (((long) (i & 0xFFFF) << 48)) |
+                    ((cur) << 16) |
+                    (long) (seed & 0xFFFF);
+            System.out.println(l+"-"+i);
+        }
+
+    }
+
 
 }

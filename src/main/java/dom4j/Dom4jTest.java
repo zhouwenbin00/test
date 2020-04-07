@@ -14,8 +14,8 @@ import java.util.Map;
 /** @author zwb */
 public class Dom4jTest {
 
-    private static final String ProtocolsSrcDir = "E:\\project\\trunk_XLZ_skill\\Protocols";
-    private static final String genDir = "E:\\project\\trunk_XLZ_skill\\protocolsa\\protocols";
+    private static final String ProtocolsSrcDir = "E:\\project\\trunk_XLZ_new\\Protocols";
+    private static final String genDir = "E:\\project\\trunk_XLZ_new\\protocolsa\\protocols";
 
     private static Map<String, DefinitionFile> definitionFileMap = new HashMap<>();
 
@@ -108,7 +108,7 @@ public class Dom4jTest {
             case "long":
                 return "int64";
             case "byte":
-                return "bytes";
+                return "int32";
             case "short":
                 return "int32";
         }

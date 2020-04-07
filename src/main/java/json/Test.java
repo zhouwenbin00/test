@@ -3,6 +3,7 @@ package json;
 import com.alibaba.fastjson.JSON;
 
 import java.io.PipedWriter;
+import java.util.Base64;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -88,5 +89,11 @@ public class Test {
         System.out.println(pow);
         return "";
     }
+
+    @org.junit.Test
+    public void json(){
+
+    }
+
 
 }

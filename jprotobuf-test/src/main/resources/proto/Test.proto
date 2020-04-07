@@ -1,0 +1,13 @@
+syntax = "proto2"; //定义语法
+
+option java_package = "com.zwb.demo.protobuf"; // 生成包名
+option java_outer_classname = "Test"; // 生成类名
+
+message TestInfo {
+    required string name = 1;
+    required int32 age = 2;
+    required string desc = 3;
+}
+
+
+

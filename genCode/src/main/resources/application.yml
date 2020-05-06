@@ -1,0 +1,5 @@
+my:
+  url: jdbc:mysql://localhost:3306/led?serverTimezone=UTC
+  userName: root
+  password: 123456
+  table_name: t_box
